@@ -9,7 +9,10 @@ git config --global user.email "name@example.com"
 #npm
 npm config set registry https://registry.npm.taobao.org
 npm install sinopia
-npm adduser
+npm adduser 
 npm login
 config.yaml
 https://segmentfault.com/a/1190000005790827
+#前端框架
+semantic ui
+pure
