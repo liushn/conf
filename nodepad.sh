@@ -34,3 +34,61 @@ cdnify
 copy 直接复制
 concurrent 并行
 karma
+
+    {
+      "name": "test",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "typings install",
+        "serve": "browser-sync start -s 'app/dist' '.index.html' -f 'app/dist' '.index.html' ",
+        "watch:ts": "onchange 'app/ts/**/*.ts' -- npm run build:output",
+        "watch:html": "onchange 'app/ts/**/*' -- npm run build:output",
+        "watch:all": "npm-run-all -p serve watch:ts watch:html",
+
+        "build:output": "npm run build:clean && npm run build:copy && npm run build:clean-ts && npm run build:ts && npm run build:inject",
+        "build:clean": " rm -r -f app/dist/js/*",
+        "build:copy": " cp -R app/ts/* app/dist/js/ ",    
+        "build:clean-ts": " rm -r app/dist/js/**/*.ts ",
+        "build:ts": "  tsc -w ",
+        "build:inject": " postbuild -i app/index.html -o app/dist/index.html  -j 'app/dist/js/**/*.js '",
+
+        "build:all": "npm run build:html-js && npm run build:index && npm run build:scss && npm run build:images && npm run build:svgs",
+
+        "postinstall": "npm run build:all && npm run watch:all"
+      },
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "keywords": [
+        "typescript",
+        "angular"
+      ],
+      "author": "",
+      "license": "ISC",
+      "devDependencies": {
+        "autoprefixer": "^6.3.7",
+        "browser-sync": "^2.13.0",
+        "concat": "0.0.1-security",
+        "concat-cli": "^4.0.0",
+        "glob": "^7.0.5",
+        "html-webpack-plugin": "^2.22.0",
+        "imagemin": "^5.2.2",
+        "imagemin-cli": "^3.0.0",
+        "jshint": "^2.9.2",
+        "node-sass": "^3.8.0",
+        "npm-run-all": "^2.3.0",
+        "onchange": "^2.5.0",
+        "postbuild": "^2.0.0",
+        "postcss-cli": "^2.5.2",
+        "svg-sprite-generator": "0.0.7",
+        "svgo": "^0.6.6",
+        "ts-loader": "^0.8.2",
+        "typescript": "^2.1.0-dev.20160718",
+        "typings": "^1.3.1",
+        "uglify-js": "^2.7.0",
+        "webpack": "^1.13.1"
+      }
+    }
