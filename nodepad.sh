@@ -17,7 +17,7 @@ https://segmentfault.com/a/1190000005790827
 semantic ui
 pure
 #linux 查看端口占用进程
-lsof -i : 80
+lsof -i :80
 #linux 查看端口应用
 netstat -tln | grep 8083
 #打包
