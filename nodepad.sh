@@ -1,5 +1,7 @@
 http://174.127.195.180l/bbs/index.php
 http://www.sexx109l.com/
+http://www.pushbt.com/
+https://zhongzidi.com
 #ssh
 cd ~/.ssh
 ssh-keygen -t rsa -C "name@example.com"
