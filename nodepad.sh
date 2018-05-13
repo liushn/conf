@@ -2,6 +2,7 @@ http://174.127.195.180l/bbs/index.php
 http://www.sexx109l.com/
 http://www.pushbt.com/
 https://zhongzidi.com
+https://blog.csdn.net/aaazz47/article/details/77416136?locationNum=6&fps=1
 #ssh
 cd ~/.ssh
 ssh-keygen -t rsa -C "name@example.com"
