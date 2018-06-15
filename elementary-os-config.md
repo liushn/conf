@@ -11,11 +11,10 @@ sudo im-config -s fcitx -z default
 sudo reboot now
 ```
 
-# elementary tweaks
+# elementary-tweats
 
 ```sh
 sudo add-apt-repository ppa:philip.scott/elementary-tweaks
 sudo apt-get update
 sudo apt-get install elementary-tweaks
 ```
-
